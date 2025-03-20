@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.glitch {
+    position: relative;
+    color: #00FFFF;
+    font-size: 4rem;
+    text-transform: uppercase;
+  }
+  
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    clip: rect(0, 900px, 0, 0);
+    animation: glitch 3s infinite;
+  }
+  
+  .glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 neonPink;
+    animation-delay: 0.2s;
+  }
+  
+  .glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 neonBlue;
+  }
+  
+  @keyframes glitch {
+    0% {
+      clip: rect(0, 900px, 0, 0);
+    }
+    33% {
+      clip: rect(100px, 900px, 200px, 0);
+    }
+    66% {
+      clip: rect(200px, 900px, 300px, 0);
+    }
+    100% {
+      clip: rect(300px, 900px, 400px, 0);
+    }
+  }
+  
+  
